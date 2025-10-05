@@ -1,0 +1,81 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #cce8ff 0%, #b8e0fe 60%, #f0f9ff 100%);
+  /* Simulates sky blue gradient from top-left to bottom-right */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.bg-blur {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  width: 100vw; height: 100vh;
+  background: inherit;
+  filter: blur(24px) brightness(1.08);
+  /* This blurs the entire background for ultimate frosted effect */
+}
+
+.glass-box {
+  position: relative;
+  z-index: 1;
+  max-width: 600px; /* <-- Change width here */
+  margin: auto;
+  padding: 2.5rem 2rem 2rem 2rem;
+  background: linear-gradient(
+      120deg,
+      rgba(245, 255, 255, 0.83) 60%,
+      rgba(196, 233, 255, 0.74) 100%
+    );
+  border-radius: 22px;
+  border: 2px solid rgba(239, 249, 255, 0.75);
+  box-shadow: 0 8px 38px 0 rgba(31, 38, 135, 0.22);
+  backdrop-filter: blur(14px) saturate(125%);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+  animation: glass-pop 0.94s cubic-bezier(.84,-0.01,.28,1.14);
+  transition: box-shadow .18s, border .18s;
+}
+
+
+@keyframes glass-pop {
+  from {
+    transform: scale(.88) translateY(56px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.glass-box h5 {
+  background: linear-gradient(90deg, #79d3fb 0%, #bed9fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: .9rem;
+}
+
+.MuiTextField-root, .MuiFormControl-root {
+  background: rgba(255,255,255,0.74);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(185,229,255,0.12);
+}
+.MuiAutocomplete-root {
+  background: rgba(255,255,255,0.42);
+  border-radius: 14px;
+}
+
+.MuiButton-containedPrimary {
+  background: linear-gradient(95deg, #81e9ff 0%, #56ccf2 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 18px 0 rgba(65,188,252,0.24);
+  font-weight: 700;
+  border-radius: 15px;
+  letter-spacing: 1.2px;
+}
